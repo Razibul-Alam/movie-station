@@ -1,6 +1,6 @@
 ** Movie Station
 
- * visit here https://keen-maamoul-dc95db.netlify.app/
+ * visit here https://movie-station.netlify.app/
 
  **Description
   * This is a movies list showing related website. Which is created by React and React.
