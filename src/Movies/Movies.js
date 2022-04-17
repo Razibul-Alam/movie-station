@@ -1,6 +1,6 @@
 
 import React,{useEffect, useState} from 'react';
-import { InputGroup, Row,Button,FormControl,Dropdown  } from 'react-bootstrap';
+import { InputGroup, Row,FormControl} from 'react-bootstrap';
 import CategoryFilter from '../CategoryFilter/CategoryFilter';
 import SingleMovie from '../SingleMovie/SingleMovie';
 
@@ -16,7 +16,7 @@ const Movies = () => {
     // load data
     useEffect(()=>{
       let url;
-      searchText?url=`http://www.omdbapi.com/?s=${searchText}&apikey=f57739d1&type=${category}`:url=`http://www.omdbapi.com/?s=harry&apikey=f57739d1&type=${category}`
+      searchText?url=`https://www.omdbapi.com/?s=${searchText}&apikey=f57739d1&type=${category}`:url=`https://www.omdbapi.com/?s=harry&apikey=f57739d1&type=${category}`
           
           fetch(url)
       .then(res=>res.json())

@@ -5,7 +5,7 @@ const SingleMovie = ({movie}) => {
   const[rating,setRating]=useState('')
   const{Title,Poster,Year,imdbID}=movie;
 useEffect(()=>{
-fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f57739d1`)
+fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f57739d1`)
 .then(res=>res.json())
 .then(data=>setRating(data.imdbRating))
 },[imdbID])
