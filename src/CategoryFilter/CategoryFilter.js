@@ -1,5 +1,5 @@
 import { Dropdown } from 'react-bootstrap';
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 const categories=['movie','series']
 const CategoryFilter = ({category,setCategory}) => {
     return (
@@ -8,12 +8,10 @@ const CategoryFilter = ({category,setCategory}) => {
   <Dropdown.Toggle variant="success" id="dropdown-basic">
     Category
   </Dropdown.Toggle>
-
   <Dropdown.Menu>
     {categories.map(category=><Dropdown.Item onClick={()=>setCategory(category)}>{category}</Dropdown.Item>)}
   </Dropdown.Menu>
-</Dropdown>
-            
+</Dropdown>        
         </div>
     );
 };

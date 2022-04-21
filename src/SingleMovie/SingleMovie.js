@@ -1,15 +1,10 @@
 import React,{useState,useEffect} from 'react';
-import { Card,Col } from 'react-bootstrap';
+import { Card,Col,Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SingleMovie = ({movie}) => {
-  const[rating,setRating]=useState('')
+  // destructuring properties from movie object
   const{Title,Poster,Year,imdbID}=movie;
-useEffect(()=>{
-fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f57739d1`)
-.then(res=>res.json())
-.then(data=>setRating(data.imdbRating))
-},[imdbID])
-
     return (
       <Col>
         <Card>
@@ -19,8 +14,8 @@ fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f57739d1`)
         </Card.Body>
         <Card.Footer>
           <div className='d-flex justify-content-between'>
-          <small className="text-muted">Released in {Year}</small>
-          <p>ImdbRating: {rating}</p>
+          <Link to={`movie/${imdbID}`}>Details</Link>
+          <p>Realesed in: {Year}</p>
           </div>
         </Card.Footer>
       </Card>
